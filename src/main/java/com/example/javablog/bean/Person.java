@@ -1,6 +1,7 @@
 package com.example.javablog.bean;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -8,10 +9,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @ConfigurationProperties 将配置文件注入注解中
+ * @ConfigurationProperties 将全局配置文件注入注解中
+ * @PropertySource 是指定配置文件注解进去容器当中
  * @Component 是把文件放入到spring当中
  */
-
+@PropertySource(value = {"classpath:person.properties"})
 @Component
 @ConfigurationProperties(prefix = "person")
 public class Person {
