@@ -1,16 +1,18 @@
-#server:
-#  port: 8081
-#
-#
-#person:
-#  last-name: 张三
-#  age: 19
-#  boss: false
-#  birth: 2018/12/12
-#  maps: {k1: v1, k2: 12}
-#  lists:
-#    -list
-#    -zhanliu
-#  dog:
-#    name: 小狗
-#    age: 12
+server:
+  port: 8001
+spring:
+  profiles:
+    active: prod
+
+---
+server:
+  port: 8002
+spring:
+  profiles: dev
+
+
+---
+server:
+  port: 8003
+spring:
+  profiles: prod
